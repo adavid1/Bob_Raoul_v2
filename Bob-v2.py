@@ -97,15 +97,15 @@ def get_new_frame(frame_index, frame_dir) :
 pygame.init()
 
 #initiate variables
-base_path = "/home/pi/Documents/Bob_Raoul_v2/"
+base_path = "/home/pi/Documents/Python/Bob_Raoul_v2/"
 cap = int()
 cap = get_caps_amount()
 frame_dir = str()
 frame_dir = get_random_file("video_backgrounds")
 frame_index = 0
 
-display_width = 640#1280
-display_height = 512#1024
+display_width = 640
+display_height = 512
 dw_half = display_width/2
 dh_half = display_height/2
 
@@ -139,7 +139,7 @@ while not exit:
                 frame_dir = get_random_file("video_backgrounds")
     
     #create our fancy text
-    bigfont = pygame.font.Font(None, 100)
+    bigfont = pygame.font.Font(None, 1000)
     #text1 = textHollow(bigfont, str(cap), white)
     text2 = textOutline(bigfont, str(cap), grey, white)
     
