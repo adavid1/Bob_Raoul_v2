@@ -42,8 +42,8 @@ def new_cap():
     file = open("caps.txt","w") 
     file.write('%d' % (cap + 1)) 
     file.close() 
-    play_random_sound()
-    show_random_image()
+    #play_random_sound()
+    #show_random_image()
 
 def get_caps_amount():
     with open("caps.txt") as file: #with statment corresponds to c# using
@@ -97,15 +97,15 @@ def get_new_frame(frame_index, frame_dir) :
 pygame.init()
 
 #initiate variables
-base_path = "/home/pi/Documents/Python/Bob_Raoul_v2/"
+base_path = "/home/pi/Documents/Bob_Raoul_v2/"
 cap = int()
 cap = get_caps_amount()
 frame_dir = str()
 frame_dir = get_random_file("video_backgrounds")
 frame_index = 0
 
-display_width = 640
-display_height = 512
+display_width = 1280
+display_height = 1024
 dw_half = display_width/2
 dh_half = display_height/2
 
@@ -116,9 +116,15 @@ black = (0,0,0)
 white = (255,255,255)
 grey = (100,100,100)
 
+# draw text
+font = pygame.font.Font(None, 250)
+
 clock = pygame.time.Clock()
 exit = False
 #bg = pygame.image.load("background.png") get single background
+
+#create our fancy text
+bigfont = pygame.font.Font(None, 1000)
 
 
 #MAIN LOOP ----------------------------------------------------------------------------------------------------------------------------------
@@ -138,21 +144,24 @@ while not exit:
                 cap = get_caps_amount()
                 frame_dir = get_random_file("video_backgrounds")
     
-    #create our fancy text
-    bigfont = pygame.font.Font(None, 1000)
     #text1 = textHollow(bigfont, str(cap), white)
-    text2 = textOutline(bigfont, str(cap), grey, white)
+    text2 = textOutline(font, str(cap), grey, white)
     
     #screen.blit(bg, (0, 0)) display single background
     #screen.blit(text1, (dw_half-(text1.get_width()/2), dh_half-(text1.get_height()/2))) #display invisible text with only border
     
     frame_index = get_new_frame(frame_index, frame_dir)
     
-    screen.blit(text2, (dw_half-(text2.get_width()/2), dh_half-(text2.get_height()/2)))
+    #text = font.render(str(cap), True, black)
+    #text_rect = text.get_rect(center=(display_width/2, display_height/2))
+    #screen.blit(text, text_rect)
+    
+    #screen.blit(text2, (dw_half-(text2.get_width()/2), dh_half-(text2.get_height()/2)))
+    screen.blit(text2, (display_width-(text2.get_width()), display_height-(text2.get_height())))
     
     pygame.display.update()
     
-    clock.tick(60)
+    #clock.tick(60)
 
 pygame.quit()
 quit()
