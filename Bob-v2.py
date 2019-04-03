@@ -8,6 +8,7 @@ GPIO.setwarnings(False) #do not display the warnings
 GPIO.setmode (GPIO.BCM) #or GPIO.setmode(GPIO.BOARD)
 
 GPIO.setup(14,GPIO.IN) #GPIO 14 -> IR sensor as input"
+GPIO.add_event_detect(14, GPIO.RISING)
 
 #FUNCTIONS ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -42,7 +43,7 @@ def new_cap():
     file = open("caps.txt","w") 
     file.write('%d' % (cap + 1)) 
     file.close() 
-    #play_random_sound()
+    play_random_sound()
     #show_random_image()
 
 def get_caps_amount():
@@ -109,7 +110,7 @@ display_height = 1024
 dw_half = display_width/2
 dh_half = display_height/2
 
-screen = pygame.display.set_mode((display_width,display_height))#, pygame.FULLSCREEN)
+screen = pygame.display.set_mode((display_width,display_height), pygame.FULLSCREEN)
 
 #colors
 black = (0,0,0)
@@ -119,7 +120,7 @@ grey = (100,100,100)
 # draw text
 font = pygame.font.Font(None, 250)
 
-clock = pygame.time.Clock()
+#clock = pygame.time.Clock()
 exit = False
 #bg = pygame.image.load("background.png") get single background
 
@@ -130,11 +131,11 @@ bigfont = pygame.font.Font(None, 1000)
 #MAIN LOOP ----------------------------------------------------------------------------------------------------------------------------------
 
 while not exit:
-    if(GPIO.input(14)==False): #cap is detected
-            new_cap()
-            cap = get_caps_amount()
-            frame_dir = get_random_file("video_backgrounds")
-            time.sleep(1) #security timer
+    if GPIO.event_detected(14):
+        new_cap()
+        cap = get_caps_amount()
+        frame_dir = get_random_file("video_backgrounds")
+        #time.sleep(1) #security timer
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
