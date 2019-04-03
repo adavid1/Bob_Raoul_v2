@@ -42,8 +42,8 @@ def new_cap():
     file = open("caps.txt","w") 
     file.write('%d' % (cap + 1)) 
     file.close() 
-    #play_random_sound()
-    #show_random_image()
+    play_random_sound()
+    show_random_image()
 
 def get_caps_amount():
     with open("caps.txt") as file: #with statment corresponds to c# using
@@ -51,7 +51,7 @@ def get_caps_amount():
             
 def play_random_sound():
     pygame.mixer.init()
-    pygame.mixer.music.load(base_path+'sounds/' + get_random_file(base_path+"sounds"))
+    pygame.mixer.music.load(base_path+'sounds/' + get_random_file("sounds"))
     pygame.mixer.music.play()
 
 def get_random_file(directory):
@@ -97,7 +97,7 @@ def get_new_frame(frame_index, frame_dir) :
 pygame.init()
 
 #initiate variables
-base_path = "/home/pi/Documents/Bob_Raoul_v2-master/"
+base_path = "/home/pi/Documents/Bob_Raoul_v2/"
 cap = int()
 cap = get_caps_amount()
 frame_dir = str()
