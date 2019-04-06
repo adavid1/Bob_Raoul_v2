@@ -144,10 +144,10 @@ while not exit:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 exit = True
-            elif event.key == pygame.K_INSERT:
+            """elif event.key == pygame.K_INSERT:
                 new_cap()
                 cap = get_caps_amount()
-                frame_dir = get_random_file("video_backgrounds")
+                frame_dir = get_random_file("video_backgrounds")"""
     
     text2 = textOutline(font, str(cap), grey, white)
     
