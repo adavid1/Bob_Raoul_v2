@@ -82,4 +82,4 @@ Feel free to fork this repository and contribute by submitting pull requests. Fo
 
 - UTBM for the inspiration of the Raoul concept.
 - The Hatry-poté for the incredible colocation experience and support during the development of this project.
-- Fice, Tumleu, Hackerman, DuQ, érosse, Kyrie, Nital, Marie, Lag, and all the other testers/players (apologies if anyone was missed) for their valuable feedback and contributions.
+- Fice, Tumleu, Hackerman, DuQ, Érosse, Kyrie, Nital, Marie, Lag, and all the other testers/players (apologies if anyone was missed) for their valuable feedback and contributions.
