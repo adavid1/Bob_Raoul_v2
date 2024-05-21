@@ -60,7 +60,8 @@ The inspiration for this project comes from a tradition at UTBM (Université de 
 
 ## Directory Structure
 
-```Bob_Raoul_v2/
+```
+Bob_Raoul_v2/
 ├── video_backgrounds/
 │ └── [directories containing frames of animations in JPEG format]
 ├── sounds/
@@ -68,7 +69,8 @@ The inspiration for this project comes from a tradition at UTBM (Université de 
 ├── Bob-v2.py
 ├── requirements.txt
 ├── caps.txt
-└── README.md```
+└── README.md
+```
 
 
 ## Contribution
