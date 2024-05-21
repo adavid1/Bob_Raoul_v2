@@ -33,7 +33,7 @@ The inspiration for this project comes from a tradition at UTBM (Université de 
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/yourusername/Bob_Raoul_v2.git
+   git clone https://github.com/adavid1/Bob_Raoul_v2.git
    cd Bob_Raoul_v2
    ```
 2. **Install Dependencies**
