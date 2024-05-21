@@ -47,7 +47,7 @@ The inspiration for this project comes from a tradition at UTBM (Université de 
 
 4. **Run the Program**
 	```sh
-   python main.py
+   python Bob-v2.py
    ```
 
 ## Usage
